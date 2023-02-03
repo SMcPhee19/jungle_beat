@@ -19,6 +19,15 @@ class LinkedList
     current.next_node = @head
     @head = current
   end
+  
+  def insert(position, sound)
+    current = @head
+    position.times do
+    current.next_node
+   end
+   current = Node.new(sound)
+  #  require 'pry'; binding.pry
+  end
 
   def count
     return 0 if @head == nil
