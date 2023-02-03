@@ -14,6 +14,12 @@ class LinkedList
     sound
   end
 
+  def prepend(sound)
+    current = Node.new(sound)
+    current.next_node = @head
+    @head = current
+  end
+
   def count
     return 0 if @head == nil
     node_number = 1
