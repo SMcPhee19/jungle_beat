@@ -6,10 +6,16 @@ class LinkedList
   end
 
   def append(sound)
+    new_node = Node.new(sound)
     if self.count == 0
-      @head = Node.new(sound)
+      @head = new_node
     else
-      @head.next_node = Node.new(sound)
+      current_node = @head
+      while current_node.next_node != nil
+        current_node = current_node.next_node
+      end
+      current_node.next_node = new_node
+      # @head.next_node = Node.new(sound)
     end
     sound
   end
@@ -22,10 +28,13 @@ class LinkedList
   
   def insert(position, sound)
     current = @head
-    position.times do
-    current.next_node
-   end
-   current = Node.new(sound)
+    (position - 1).times do
+      current = current.next_node
+    end
+   new_node = Node.new(sound)
+   new_node.next_node = current.next_node
+   current.next_node = new_node
+   sound
   #  require 'pry'; binding.pry
   end
 
