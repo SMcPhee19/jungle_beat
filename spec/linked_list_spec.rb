@@ -26,7 +26,7 @@ RSpec.describe 'linked_list' do
     expect(list.count).to eq(2)
     expect(list.to_string).to eq("doop deep")
 
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
 
   end
 
@@ -34,10 +34,11 @@ RSpec.describe 'linked_list' do
     list.append("doop")
     list.append("deep")
     list.append("woo")
+    require 'pry'; binding.pry
 
     expect(list.insert(1, "foo")).to eq("foo")
     expect(list.to_string).to eq("doop foo deep woo")
-    
+
   end
 
 
