@@ -63,11 +63,11 @@ RSpec.describe 'linked_list' do
     list.append("woo")
     list.append("shi")
     list.append("shu")
-    list.append("blob")
+    list.append("blop")
 
     expect(list.pop).to eq("blop")
     expect(list.pop).to eq("shu")
-    expect(list.to_string).to eq("dee woo shi")
+    expect(list.to_string).to eq("deep woo shi")
   end
 
 end
