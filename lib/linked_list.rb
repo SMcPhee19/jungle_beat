@@ -15,7 +15,6 @@ class LinkedList
         current_node = current_node.next_node
       end
       current_node.next_node = new_node
-      # @head.next_node = Node.new(sound)
     end
     sound
   end
@@ -35,7 +34,30 @@ class LinkedList
    new_node.next_node = current.next_node
    current.next_node = new_node
    sound
-  #  require 'pry'; binding.pry
+  end
+
+  def find(position, number_to_return)
+    current = @head
+    sounds = []
+    position.times do
+      current = current.next_node
+    end
+
+    number_to_return.times do
+      sounds << current.data
+      current = current.next_node
+    end
+    # require 'pry'; binding.pry
+    sounds.join(" ")
+  end
+
+  def includes?(sound)
+    current = @head
+    until current.data == sound || current.next_node == nil
+      current = current.next_node
+    end
+    # require 'pry'; binding.pry
+    current.data == sound
   end
 
   def count
@@ -61,3 +83,30 @@ class LinkedList
   end
 
 end
+
+
+# def pop
+#   return nil if @head==nil
+#   current = @head
+#   if current==@tail
+#     @head = nil
+#      @tail = nil
+#      @length = 0
+#      return current
+#      current = nil
+#   end
+#   while current do 
+#       new_tail = current
+#       current = current.next
+#       if current==@tail
+#           @tail = new_tail
+#           @tail.next = nil
+#           @length -= 1
+#           if @length<=0
+#               @head = nil
+#               @tail = nil
+#           end
+#           return current  
+#       end
+#   end
+#  end
