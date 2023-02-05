@@ -1,8 +1,9 @@
 class LinkedList
 
-  attr_reader :head
-  def initialize(head = nil)
+  attr_reader :head, :tail
+  def initialize(head = nil, tail = nil)
     @head = head
+    @tail = tail
   end
 
   def append(sound)
@@ -82,31 +83,25 @@ class LinkedList
     sounds.join(" ")
   end
 
+  def pop
+    current = @head
+    until current.next_node.next_node == nil ## until current.next_node = nil index through the linked list
+      current = current.next_node ## now setting current equal to the next node
+    end
+    tail = current.next_node ## set the current node as the now tail node
+    current.next_node = nil
+    tail.data ## return the current node's data
+  end
+
+
+
 end
 
 
-# def pop
-#   return nil if @head==nil
-#   current = @head
-#   if current==@tail
-#     @head = nil
-#      @tail = nil
-#      @length = 0
-#      return current
-#      current = nil
-#   end
-#   while current do 
-#       new_tail = current
-#       current = current.next
-#       if current==@tail
-#           @tail = new_tail
-#           @tail.next = nil
-#           @length -= 1
-#           if @length<=0
-#               @head = nil
-#               @tail = nil
-#           end
-#           return current  
-#       end
-#   end
-#  end
+
+
+# if tail == nil ## if we are now at the tail, do the following. . . 
+  #   tail = new_tail ## set the curren tail to be the new tail
+  #   new_tail = 
+  #   new_tail.next_node = nil ## set the nil value to indicate that this is the new tail value
+  # end
