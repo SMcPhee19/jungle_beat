@@ -41,7 +41,7 @@ RSpec.describe 'jungle_beat' do
   end
 
   it 'can reset voice' do
-    expect(jb.reset_voice).to eq("Boing")
+    expect(jb.reset_voice).to eq("Samantha")
   end
   it 'can change rate' do
     expect(jb.rate).to eq(500)
@@ -50,7 +50,7 @@ RSpec.describe 'jungle_beat' do
   end
 
   it 'can change voice' do
-    expect(jb.voice).to eq("Boing")
+    expect(jb.voice).to eq("Samantha")
     jb.voice = "Daniel"
     expect(jb.voice).to eq("Daniel")
   end
