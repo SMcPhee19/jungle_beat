@@ -4,8 +4,8 @@ class JungleBeat
   attr_accessor :list, :voice, :rate
   def initialize()
     @list = LinkedList.new  ## list instance variable is a new LinkedList instance
-    @rate = 500
-    @voice = "Boing"
+    @rate = 300
+    @voice = "Samantha"
   end
   
   def append(sounds)
@@ -37,11 +37,11 @@ class JungleBeat
   end
 
   def reset_voice
-    @voice = "Boing"
+    @voice = "Samantha"
   end
 
   def reset_rate
-    @rate = 500
+    @rate = 300
   end
 
   private ## only callable in the jungle_beat class. A helper method to ecapsulate in just this class
