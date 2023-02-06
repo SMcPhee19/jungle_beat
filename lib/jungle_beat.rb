@@ -1,5 +1,5 @@
 class JungleBeat
-  VALID_BEATS = %w[deep doo ditt woo hoo shu tee] ## class, level variable. allows an array to be separated without a comma 
+  VALID_BEATS = %w[deep doo ditt woo hoo shu tee dee bop boop la na] ## class, level variable. allows an array to be separated without a comma 
 
   attr_accessor :list, :voice, :rate
   def initialize()
