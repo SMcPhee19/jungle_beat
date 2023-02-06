@@ -6,14 +6,18 @@ class JungleBeat
   end
   
 
-  def append(sound)
-    sound = []
-
-    sounds << 
+  def append(sounds)
+    sounds.split(" ").each do |sound|
+      list.append(sound)
+    end
+    sounds
   end
 
+  def count
+    list.count
+  end
 
-
+  
 
 
 
