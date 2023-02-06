@@ -18,8 +18,12 @@ RSpec.describe 'jungle_beat' do
   it 'can count' do
     jb.append("deep doo ditt")
     jb.append("woo hoo shu")
-    require 'pry'; binding.pry
     expect(jb.count).to eq(6)
+  end
+
+  it 'can play' do
+    jb.append("deep doo ditt woo hoo shu")
+    jb.play
   end
     
 
