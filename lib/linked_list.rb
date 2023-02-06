@@ -21,9 +21,9 @@ class LinkedList
   end
 
   def prepend(sound)
-    current = @head
     current = Node.new(sound)
     current.next_node = @head
+    @head = current
   end
   
   def insert(position, sound)
