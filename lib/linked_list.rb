@@ -31,8 +31,7 @@ class LinkedList
     (position - 1).times do
       current = current.next_node
     end
-   new_node = Node.new(sound)
-   new_node.next_node = current.next_node
+   new_node = Node.new(sound, current.next_node)
    current.next_node = new_node
    sound
   end
@@ -48,7 +47,6 @@ class LinkedList
       sounds << current.data
       current = current.next_node
     end
-    # require 'pry'; binding.pry
     sounds.join(" ")
   end
 
@@ -57,7 +55,6 @@ class LinkedList
     until current.data == sound || current.next_node == nil
       current = current.next_node
     end
-    # require 'pry'; binding.pry
     current.data == sound
   end
 
@@ -84,24 +81,17 @@ class LinkedList
   end
 
   def pop
-    current = @head
-    until current.next_node.next_node == nil ## until current.next_node = nil index through the linked list
+    current = @head ## starting at the head of the linked list
+    until current.next_node.next_node == nil ## making sure that iteration through the list is stopped at the penultimate node
       current = current.next_node ## now setting current equal to the next node
     end
     tail = current.next_node ## set the current node as the now tail node
-    current.next_node = nil
-    tail.data ## return the current node's data
+    current.next_node = nil ## setting current.next_node data to be nil, making it the new end of the list
+    tail.data ## return the tail's data
   end
-
-
 
 end
 
 
 
 
-# if tail == nil ## if we are now at the tail, do the following. . . 
-  #   tail = new_tail ## set the curren tail to be the new tail
-  #   new_tail = 
-  #   new_tail.next_node = nil ## set the nil value to indicate that this is the new tail value
-  # end

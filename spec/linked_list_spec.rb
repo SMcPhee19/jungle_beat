@@ -31,7 +31,7 @@ RSpec.describe 'linked_list' do
     list.append("doop")
     list.append("deep")
     list.append("woo")
-
+    
     expect(list.insert(1, "foo")).to eq("foo")
     expect(list.to_string).to eq("doop foo deep woo")
   end
